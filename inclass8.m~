@@ -61,5 +61,4 @@ rand_seq2=[rand_seq(1:40) randdnaseq(20) rand_seq(61:100)];
 %Open is for default 8, this will give you a standard gap, but, with a high
 %extended gap you're creating a much more sensitive plot. That is why there
 %is a greater gap within the highest value and lowest. This graph 4 is more
-%close to graph 2, because has a higher discrimination criteria for
-%mismatch nucleotides.
+%close to graph 2, because has a higher discrimination 

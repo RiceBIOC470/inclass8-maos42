@@ -1,3 +1,6 @@
+%AW: see comments below. 0.95/1.
+
+
 %Inclass assignment 8
 
 %Using the swalign function
@@ -27,6 +30,9 @@ rand_seq2=[rand_seq(1:40) randdnaseq(20) rand_seq(61:100)];
 [score1, align1, start1]=swalign(rand_seq,rand_seq2,'Alphabet','nt','ScoringMatrix',nuc44,'GapOpen',2,'Showscore',true);
 [score2, align2, start2]=swalign(rand_seq,rand_seq2,'Alphabet','nt','ScoringMatrix',nuc44,'GapOpen',15,'Showscore',true);
 
+%AW: there is a very simple difference in terms of the alignments. One puts in gaps (because the penalty is low), while
+% the other forces mismatches (because the penalty for gaps is too high). -0.05. 
+
 %Miguel Angel: if you put the gap open lower in the first sequence, you're
 %telling matlab that you have more range for error, which means that a
 %value for example of 10 won't be that much different from an 11. On the
@@ -53,6 +59,8 @@ rand_seq2=[rand_seq(1:40) randdnaseq(20) rand_seq(61:100)];
 %extra letter, you'll get a huge penalization now, thus creating a
 %more sensible plot for consecutive mismatches.
 
+%AW: I'm not sure what you mean by sensible, but ok. the point is that the gaps will be short. 
+
 %% F
 
 [score4, align4, start4]=swalign(rand_seq,rand_seq2,'Alphabet','nt','ScoringMatrix',nuc44,'Showscore',true,'EXTENDGAP', 15);
@@ -63,3 +71,6 @@ rand_seq2=[rand_seq(1:40) randdnaseq(20) rand_seq(61:100)];
 %is a greater gap within the highest value and lowest. This graph 4 is more
 %close to graph 2, because has a higher discrimination criteria for
 %mismatch nucleotides.
+
+%AW: the point is that there will be fewer gaps than (E) because of the higher GapOpen paramter,
+%but they will be long. 
